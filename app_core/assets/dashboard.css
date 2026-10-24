@@ -1,0 +1,277 @@
+:root {
+    --ink: #111318;
+    --ink-soft: #5f6672;
+    --muted: #8b929d;
+    --line: #e7e9ed;
+    --surface: #ffffff;
+    --canvas: #f5f6f8;
+    --accent: #e33443;
+    --accent-dark: #b91f2e;
+    --accent-soft: #fff0f1;
+    --success: #13795b;
+    --warning: #9a6700;
+    --info: #145da0;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --shadow-sm: 0 8px 24px rgba(17, 19, 24, .05);
+    --shadow-md: 0 18px 48px rgba(17, 19, 24, .08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--accent);
+    z-index: 1200;
+}
+
+.sidebar {
+    width: 264px !important;
+    padding: 32px 18px 24px !important;
+    background: var(--ink) !important;
+    border-right: 1px solid #272a31;
+    box-shadow: 10px 0 32px rgba(0, 0, 0, .08);
+}
+
+.sidebar .brand-title {
+    padding: 10px 12px 28px !important;
+    border-bottom-color: #2b2f37 !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    letter-spacing: .02em !important;
+}
+
+.sidebar .brand-title i { color: #ff5360 !important; }
+
+.sidebar .nav-link {
+    position: relative;
+    margin: 4px 0 !important;
+    padding: 13px 14px !important;
+    border: 1px solid transparent;
+    color: #a9afb9 !important;
+    font-size: .9rem;
+    transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    color: #838a96;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff !important;
+    background: #1d2027 !important;
+    transform: translateX(2px);
+}
+
+.sidebar .nav-link:hover i,
+.sidebar .nav-link.active i { color: #fff; }
+
+.sidebar .nav-link.active {
+    color: #fff !important;
+    background: var(--accent) !important;
+    box-shadow: 0 10px 20px rgba(227, 52, 67, .22);
+}
+
+.main-wrapper {
+    margin-left: 264px !important;
+    padding: 42px 38px 38px !important;
+}
+
+.dashboard-card {
+    min-height: calc(100vh - 80px);
+    margin: 0 !important;
+    padding: 34px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: var(--radius-lg) !important;
+    background: var(--surface) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.dashboard-card > div[style*="font-family"] {
+    margin-top: 0 !important;
+    font-family: inherit !important;
+}
+
+.dashboard-card h2 {
+    margin: 0 !important;
+    color: var(--ink);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 750;
+    letter-spacing: -.035em;
+    line-height: 1.2;
+}
+
+.dashboard-card h3,
+.dashboard-card h4 { color: var(--ink); letter-spacing: -.02em; }
+
+.dashboard-card > div > div:first-child { gap: 20px; }
+
+.dashboard-card button,
+.dashboard-card a[style*="background"] {
+    border-radius: 10px !important;
+    border: 1px solid transparent !important;
+    font-weight: 650 !important;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.dashboard-card button:hover,
+.dashboard-card a[style*="background"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(17, 19, 24, .12);
+}
+
+.dashboard-card button[onclick*="toggle"],
+.dashboard-card button[name="save_product"],
+.dashboard-card button[name="save_dispatch"],
+.dashboard-card button[name="adjust_stock"],
+.dashboard-card button[name="save_note"],
+.dashboard-card button[name="save_invoice"] {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+.dashboard-card button[onclick*="toggle"]:hover,
+.dashboard-card button[name="save_product"]:hover,
+.dashboard-card button[name="save_dispatch"]:hover,
+.dashboard-card button[name="adjust_stock"]:hover,
+.dashboard-card button[name="save_note"]:hover,
+.dashboard-card button[name="save_invoice"]:hover { background: var(--accent-dark) !important; }
+
+.dashboard-card input,
+.dashboard-card select,
+.dashboard-card textarea {
+    min-height: 42px;
+    border: 1px solid #dfe2e7 !important;
+    border-radius: var(--radius-sm) !important;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.dashboard-card textarea { min-height: 84px; }
+
+.dashboard-card input:focus,
+.dashboard-card select:focus,
+.dashboard-card textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 4px rgba(227, 52, 67, .12) !important;
+}
+
+.dashboard-card form[style*="background"],
+.dashboard-card div[id$="Modal"] {
+    border: 1px solid var(--line) !important;
+    border-radius: var(--radius-md) !important;
+    background: #fafbfc !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.dashboard-card table {
+    width: 100%;
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 1px var(--line);
+    background: #fff !important;
+}
+
+.dashboard-card table th {
+    padding: 15px 16px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+    background: #f8f9fb !important;
+    color: var(--muted) !important;
+    font-size: .68rem;
+    font-weight: 750;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.dashboard-card table td {
+    padding: 16px !important;
+    border: 0 !important;
+    border-bottom: 1px solid #f0f1f3 !important;
+    color: var(--ink-soft);
+    vertical-align: middle;
+}
+
+.dashboard-card table tbody tr { transition: background .2s ease; }
+.dashboard-card table tbody tr:hover { background: #fff8f8; }
+.dashboard-card table tbody tr:last-child td { border-bottom: 0 !important; }
+.dashboard-card table strong { color: var(--ink); }
+.dashboard-card table small { color: var(--muted) !important; }
+
+.dashboard-card a:not(.nav-link) { color: var(--accent); }
+.dashboard-card a:not(.nav-link):hover { color: var(--accent-dark); }
+
+.dashboard-card .alert-danger {
+    border: 0;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
+.mobile-nav {
+    display: none;
+    background: rgba(17, 19, 24, .97) !important;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important;
+    border-top: 1px solid #2b2f37 !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .14);
+    backdrop-filter: blur(12px);
+}
+
+.mobile-nav .nav-link { color: #989eaa !important; font-size: .67rem; }
+.mobile-nav .nav-link.active { color: #ff5360 !important; }
+.mobile-nav .nav-link i { font-size: 1.1rem !important; }
+
+@media (max-width: 991.98px) {
+    .sidebar { display: none; }
+    .main-wrapper {
+        margin-left: 0 !important;
+        padding: 24px 14px 88px !important;
+    }
+    .dashboard-card {
+        min-height: calc(100vh - 112px);
+        padding: 22px 16px !important;
+        border-radius: var(--radius-md) !important;
+    }
+    .mobile-nav { display: flex !important; }
+    .dashboard-card table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+@media (max-width: 640px) {
+    .dashboard-card > div > div:first-child { align-items: flex-start !important; flex-direction: column; }
+    .dashboard-card button[onclick*="toggle"] { width: 100%; }
+    .dashboard-card div[id$="Modal"] { padding: 16px !important; }
+    .dashboard-card form[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    .dashboard-card form[style*="grid-template-columns"] > * { grid-column: auto !important; }
+}
+
+@media print {
+    body::before { display: none; }
+    .dashboard-card { box-shadow: none !important; }
+}

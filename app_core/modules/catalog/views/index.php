@@ -74,7 +74,7 @@
                         <td style="color: #007bff; font-weight: bold;">LKR <?= number_format($p['price'], 2) ?></td>
                         <td style="text-align: center;">
                             <!-- Edit action button icon link -->
-                            <a href="?edit=<?= $p['id'] ?>" title="Edit Product" style="text-decoration: none; font-size: 18px; padding: 4px 8px; background: #ffc107; color: #fff; border-radius: 4px;">✏️</a>
+                            <a href="?edit=<?= $p['id'] ?>" title="Edit Product" aria-label="Edit Product" style="text-decoration: none; font-size: 18px; padding: 4px 8px; background: #ffc107; color: #fff; border-radius: 4px;"><i class="bi bi-pencil-square"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

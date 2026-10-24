@@ -121,7 +121,7 @@ $invoices = $dispatchController->getInvoicesForDispatch();
                             <?php endif; ?>
                             <!-- Clickable Link to Invoice View -->
                             <a href="?module=invoice&action=view&id=<?= $d['invoice_id'] ?>" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold; font-size: 13px;">
-                                📄 <?= htmlspecialchars($d['invoice_number']) ?> 🔗
+                                <i class="bi bi-receipt"></i> <?= htmlspecialchars($d['invoice_number']) ?> <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </td>
 
@@ -149,11 +149,11 @@ $invoices = $dispatchController->getInvoicesForDispatch();
                                 <select name="value" onchange="this.form.submit()" style="padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; border: none; cursor: pointer;
                                     background: <?= $d['delivery_status'] === 'Delivered' ? '#d4edda' : ($d['delivery_status'] === 'Out for Delivery' ? '#cce5ff' : ($d['delivery_status'] === 'Dispatched' ? '#fff3cd' : '#f8d7da')) ?>;
                                     color: <?= $d['delivery_status'] === 'Delivered' ? '#155724' : ($d['delivery_status'] === 'Out for Delivery' ? '#004085' : ($d['delivery_status'] === 'Dispatched' ? '#856404' : '#721c24')) ?>;">
-                                    <option value="Pending" <?= $d['delivery_status'] === 'Pending' ? 'selected' : '' ?>>⏳ Pending</option>
-                                    <option value="Dispatched" <?= $d['delivery_status'] === 'Dispatched' ? 'selected' : '' ?>>📦 Dispatched</option>
-                                    <option value="Out for Delivery" <?= $d['delivery_status'] === 'Out for Delivery' ? 'selected' : '' ?>>🚚 Out for Delivery</option>
-                                    <option value="Delivered" <?= $d['delivery_status'] === 'Delivered' ? 'selected' : '' ?>>✅ Delivered</option>
-                                    <option value="Returned" <?= $d['delivery_status'] === 'Returned' ? 'selected' : '' ?>>❌ Returned</option>
+                                    <option value="Pending" <?= $d['delivery_status'] === 'Pending' ? 'selected' : '' ?>>Pending</option>
+                                    <option value="Dispatched" <?= $d['delivery_status'] === 'Dispatched' ? 'selected' : '' ?>>Dispatched</option>
+                                    <option value="Out for Delivery" <?= $d['delivery_status'] === 'Out for Delivery' ? 'selected' : '' ?>>Out for Delivery</option>
+                                    <option value="Delivered" <?= $d['delivery_status'] === 'Delivered' ? 'selected' : '' ?>>Delivered</option>
+                                    <option value="Returned" <?= $d['delivery_status'] === 'Returned' ? 'selected' : '' ?>>Returned</option>
                                 </select>
                             </form>
                         </td>
@@ -167,15 +167,15 @@ $invoices = $dispatchController->getInvoicesForDispatch();
                                 <select name="value" onchange="this.form.submit()" style="padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; border: none; cursor: pointer;
                                     background: <?= $d['payment_status'] === 'Paid' ? '#d4edda' : ($d['payment_status'] === 'Partially Paid' ? '#fff3cd' : '#f8d7da') ?>;
                                     color: <?= $d['payment_status'] === 'Paid' ? '#155724' : ($d['payment_status'] === 'Partially Paid' ? '#856404' : '#721c24') ?>;">
-                                    <option value="Unpaid" <?= $d['payment_status'] === 'Unpaid' ? 'selected' : '' ?>>🔴 Unpaid</option>
-                                    <option value="Partially Paid" <?= $d['payment_status'] === 'Partially Paid' ? 'selected' : '' ?>>🟡 Partially Paid</option>
-                                    <option value="Paid" <?= $d['payment_status'] === 'Paid' ? 'selected' : '' ?>>🟢 Paid</option>
+                                    <option value="Unpaid" <?= $d['payment_status'] === 'Unpaid' ? 'selected' : '' ?>>Unpaid</option>
+                                    <option value="Partially Paid" <?= $d['payment_status'] === 'Partially Paid' ? 'selected' : '' ?>>Partially Paid</option>
+                                    <option value="Paid" <?= $d['payment_status'] === 'Paid' ? 'selected' : '' ?>>Paid</option>
                                 </select>
                             </form>
                         </td>
 
                         <td style="text-align: center;">
-                            <a href="?module=dispatch&delete=<?= $d['id'] ?>" onclick="return confirm('Remove dispatch log?')" title="Delete Record" style="text-decoration: none; padding: 4px 6px; background: #dc3545; color: #fff; border-radius: 4px; font-size: 13px;">🗑️</a>
+                            <a href="?module=dispatch&delete=<?= $d['id'] ?>" onclick="return confirm('Remove dispatch log?')" title="Delete Record" aria-label="Delete Record" style="text-decoration: none; padding: 4px 6px; background: #dc3545; color: #fff; border-radius: 4px; font-size: 13px;"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

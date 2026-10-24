@@ -88,7 +88,7 @@ $logs = $invController->getLogs();
                         <td><?= htmlspecialchars($log['reference'] ?: '-') ?></td>
                         <td><?= htmlspecialchars($log['notes'] ?: '-') ?></td>
                         <td style="text-align: center;">
-                            <span title="Logged entry (Audit)" style="color: #888; font-size: 14px;">🔒</span>
+                            <span title="Logged entry (Audit)" aria-label="Logged entry (Audit)" style="color: #888; font-size: 14px;"><i class="bi bi-lock-fill"></i></span>
                         </td>
                     </tr>
                 <?php endforeach; ?>

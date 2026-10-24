@@ -106,8 +106,8 @@ $allNotes = $notesController->getAllNotes();
                         </td>
                         <td><small><?= htmlspecialchars($note['created_at']) ?></small></td>
                         <td style="text-align: center;">
-                            <a href="?module=notes&edit=<?= $note['id'] ?>" title="Edit Note" style="text-decoration: none; padding: 4px 6px; background: #ffc107; color: #fff; border-radius: 4px; font-size: 13px;">✏️</a>
-                            <a href="?module=notes&delete=<?= $note['id'] ?>" onclick="return confirm('Delete this note?')" title="Delete Note" style="text-decoration: none; padding: 4px 6px; background: #dc3545; color: #fff; border-radius: 4px; font-size: 13px; margin-left: 3px;">🗑️</a>
+                            <a href="?module=notes&edit=<?= $note['id'] ?>" title="Edit Note" aria-label="Edit Note" style="text-decoration: none; padding: 4px 6px; background: #ffc107; color: #fff; border-radius: 4px; font-size: 13px;"><i class="bi bi-pencil-square"></i></a>
+                            <a href="?module=notes&delete=<?= $note['id'] ?>" onclick="return confirm('Delete this note?')" title="Delete Note" aria-label="Delete Note" style="text-decoration: none; padding: 4px 6px; background: #dc3545; color: #fff; border-radius: 4px; font-size: 13px; margin-left: 3px;"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

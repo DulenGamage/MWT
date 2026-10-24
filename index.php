@@ -196,6 +196,7 @@ $products = $catalogController->index();
             @page { size: A4 portrait; margin: 15mm; }
         }
     </style>
+    <link rel="stylesheet" href="app_core/assets/dashboard.css">
 </head>
 <body>
 

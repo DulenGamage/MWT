@@ -332,8 +332,8 @@ try {
                             <td style="font-weight: bold; color: #007bff;">LKR <?= number_format($inv['grand_total'], 2) ?></td>
                             <td><small><?= htmlspecialchars($inv['created_at']) ?></small></td>
                             <td style="text-align: center;">
-                                <a href="?module=invoice&action=view&id=<?= $inv['id'] ?>" title="View Invoice" style="text-decoration: none; padding: 4px 6px; background: #17a2b8; color: #fff; border-radius: 4px; font-size: 14px;">👁️</a>
-                                <a href="?module=invoice&action=edit&id=<?= $inv['id'] ?>" title="Edit Invoice" style="text-decoration: none; padding: 4px 6px; background: #ffc107; color: #fff; border-radius: 4px; font-size: 14px; margin-left: 4px;">✏️</a>
+                                <a href="?module=invoice&action=view&id=<?= $inv['id'] ?>" title="View Invoice" aria-label="View Invoice" style="text-decoration: none; padding: 4px 6px; background: #17a2b8; color: #fff; border-radius: 4px; font-size: 14px;"><i class="bi bi-eye"></i></a>
+                                <a href="?module=invoice&action=edit&id=<?= $inv['id'] ?>" title="Edit Invoice" aria-label="Edit Invoice" style="text-decoration: none; padding: 4px 6px; background: #ffc107; color: #fff; border-radius: 4px; font-size: 14px; margin-left: 4px;"><i class="bi bi-pencil-square"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
