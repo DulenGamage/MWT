@@ -1,0 +1,11 @@
+{
+  "id": "catalog",
+  "name": "Product Catalogue",
+  "version": "1.0.0",
+  "enabled": true,
+  "nav": {
+    "title": "Products",
+    "route": "/catalog",
+    "icon": "box"
+  }
+}
